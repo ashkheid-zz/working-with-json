@@ -1,9 +1,6 @@
-import { temp } from './ashy-fetch.js';
+import { read } from './JSONhandler.js';
 
-let url1 = '/data/colors.json';
-let url2 = '/data/users.json';
+const colors = read('/data/colors.json');
+const users = read('/data/users.json');
 
-let color = temp(url1);
-let user = temp(url2);
-
-Promise.all([color, user]);
+Promise.all([colors, users]);
