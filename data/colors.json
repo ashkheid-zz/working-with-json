@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Yellow",
+    "code": "#FFFF00"
+  },
+  {
+    "id": 2,
+    "name": "Linen",
+    "code": "#FAF0E6"
+  },
+  {
+    "id": 3,
+    "name": "Red",
+    "code": "#FF0000"
+  },
+  {
+    "id": 4,
+    "name": "Aquamarine",
+    "code": "#7FFFD4"
+  },
+  {
+    "id": 5,
+    "name": "Khaki",
+    "code": "#F0E68C"
+  },
+  {
+    "id": 6,
+    "name": "Pink",
+    "code": "#FFC0CB"
+  },
+  {
+    "id": 7,
+    "name": "Orange",
+    "code": "#FFA500"
+  },
+  {
+    "id": 8,
+    "name": "Maroon",
+    "code": "#800000"
+  },
+  {
+    "id": 9,
+    "name": "Indigo",
+    "code": "#4B0082"
+  },
+  {
+    "id": 10,
+    "name": "Violet",
+    "code": "#EE82EE"
+  },
+  {
+    "id": 11,
+    "name": "DarkSlateGray",
+    "code": "#2F4F4F"
+  },
+  {
+    "id": 12,
+    "name": "Olive",
+    "code": "#808000"
+  },
+  {
+    "id": 13,
+    "name": "Lime",
+    "code": "#00FF00"
+  },
+  {
+    "id": 14,
+    "name": "Green",
+    "code": "#008000"
+  },
+  {
+    "id": 15,
+    "name": "Aqua",
+    "code": "#00FFFF"
+  },
+  {
+    "id": 16,
+    "name": "Teal",
+    "code": "#008080"
+  },
+  {
+    "id": 17,
+    "name": "Blue",
+    "code": "#0000FF"
+  },
+  {
+    "id": 18,
+    "name": "Navy",
+    "code": "#000080"
+  },
+  {
+    "id": 19,
+    "name": "Fuchsia",
+    "code": "#FF00FF"
+  },
+  {
+    "id": 20,
+    "name": "Purple",
+    "code": "#800080"
+  }
+]
