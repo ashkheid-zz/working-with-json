@@ -9,7 +9,7 @@ export default class Grid {
   getFileName() {
     //extracting the file name from it's file-path
     let fileNameRegEx = /\w+(?=\.json)/i;
-    return fileNameRegEx.exec(this.url).toString();
+    return fileNameRegEx.exec(this.url).toString().toUpperCase();
   }
 
   titleCase(phrase) {
