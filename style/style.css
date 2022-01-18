@@ -1,3 +1,47 @@
 body {
   font-family: sans-serif;
 }
+
+table {
+  cursor: default;
+}
+
+table,
+td {
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+thead th,
+tfoot th {
+  border: 1px solid #333;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+tr:first-child {
+  background-color: #039be5;
+  color: white;
+  font-weight: bold;
+}
+
+tr:first-child td {
+  border-color: #039be5;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+tr:first-child:hover {
+  background-color: #039be5;
+}
