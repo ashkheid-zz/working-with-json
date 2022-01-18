@@ -1,30 +1,79 @@
-import { print, read } from './JSONhandler.js';
+import { read } from './JSONhandler.js';
 
 export default class Grid {
   constructor(url) {
     this.url = url;
+    this.fileName = this.getFileName();
+  }
+
+  getFileName() {
+    //extracting the file name from it's file-path
+    let fileNameRegEx = /\w+(?=\.json)/i;
+    return fileNameRegEx.exec(this.url).toString();
+  }
+
+  createTableRow(row, flag) {
+    let tr = null;
+    let td = null;
+    let tcontent = null;
+
+    switch (flag.toLowerCase()) {
+      case 'key':
+        //writing out the keys of the given JSON as the subtitle of the main table
+        tr = document.createElement('tr');
+        Object.keys(row).forEach((col) => {
+          td = document.createElement('td');
+          tcontent = document.createTextNode(col);
+          td.appendChild(tcontent);
+          tr.appendChild(td);
+        });
+        document.querySelector('tbody').insertAdjacentElement('beforeend', tr);
+        break;
+
+      case 'value':
+        //writing out the table content
+        tr = document.createElement('tr');
+        Object.values(row).forEach((col) => {
+          td = document.createElement('td');
+          tcontent = document.createTextNode(col);
+          td.appendChild(tcontent);
+          tr.appendChild(td);
+        });
+        document.querySelector('tbody').insertAdjacentElement('beforeend', tr);
+        break;
+      default:
+        console.error(
+          "createTableRow() seconds argument might wrong! You must pass 'key' or 'value'."
+        );
+        break;
+    }
   }
 
   draw() {
     read(this.url).then((resContent) => {
-      resContent.forEach((item) => {
-        // create a new div element
-        const newDiv = document.createElement('div');
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const tbody = document.createElement('tbody');
 
-        // and give it some content
-        const newContent = document.createTextNode(Object.keys(item)[1] + ": " + Object.values(item)[1]);
+      //creating an empty table
+      document.querySelector('main').insertAdjacentElement('afterend', table);
+      document
+        .querySelector('table')
+        .insertAdjacentElement('afterbegin', thead);
+      document.querySelector('thead').insertAdjacentElement('afterend', tbody);
 
-        // add the text node to the newly created div
-        newDiv.appendChild(newContent);
+      //writing out the table title
+      document.querySelector(
+        'thead'
+      ).innerHTML = `<tr><th colspan="3">~ ${this.fileName} ~</th></tr>`;
 
-        // add the newly created element and its content into the DOM
-        document.body.insertAdjacentElement('beforeend', newDiv);
-        // console.log(Object.values(item)[1]);
+      //writing out the table subtitle
+      this.createTableRow(resContent[0], 'key');
+
+      resContent.forEach((row) => {
+        //writing out the table content
+        this.createTableRow(row, 'value');
       });
     });
-  }
-  
-  getURL() {
-    alert(this.url);
   }
 }
