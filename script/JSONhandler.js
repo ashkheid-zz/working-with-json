@@ -1,8 +1,11 @@
 async function read(url) {
-  await fetch(url)
-    .then((res) => res.json())
+  return await fetch(url).then((res) => res.json());
+}
+
+async function print(url) {
+  await read(url)
     .then((resContent) => console.log(resContent))
     .catch((err) => console.error(err));
 }
 
-export { read };
+export { print, read };
