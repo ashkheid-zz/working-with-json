@@ -4,6 +4,7 @@ body {
 
 table {
   cursor: default;
+  margin-block: 20px;
 }
 
 table,
