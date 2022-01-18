@@ -9,7 +9,7 @@ export default class Grid {
   getFileName() {
     //extracting the file name from it's file-path
     let fileNameRegEx = /\w+(?=\.json)/i;
-    return fileNameRegEx.exec(this.url).toString().toUpperCase();
+    return fileNameRegEx.exec(this.url).toString();
   }
 
   titleCase(phrase) {
@@ -83,7 +83,7 @@ export default class Grid {
       //writing out the table title
       document.querySelector(`.${this.fileName}-grid thead`).innerHTML = `<tr><th colspan="${
         Object.keys(resContent[0]).length
-      }">~ ${this.fileName} ~</th></tr>`;
+      }">~ ${this.fileName.toUpperCase()} ~</th></tr>`;
 
       //writing out the table subtitle
       this.createTableRow(resContent[0], 'key');
