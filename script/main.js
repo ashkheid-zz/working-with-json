@@ -1,6 +1,8 @@
-import { read } from './JSONhandler.js';
+import { print } from './JSONhandler.js';
+import Grid from './JSONwriter-grid.js';
 
-const colors = read('/data/colors.json');
-const users = read('/data/users.json');
+print('/data/colors.json');
+print('/data/users.json');
 
-Promise.all([colors, users]);
+let grid = new Grid('/data/colors.json');
+grid.draw();
