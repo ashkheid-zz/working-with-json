@@ -12,6 +12,23 @@ export default class Grid {
     return fileNameRegEx.exec(this.url).toString();
   }
 
+  titleCase(phrase) {
+    let result = [];
+    phrase
+      .toLowerCase()
+      .split(/ |_/gim)
+      .forEach((word) => {
+        word =
+          word.length === 2
+            ? word.toUpperCase()
+            : word.charAt(0).toUpperCase() + word.substring(1);
+
+        result.push(word);
+      });
+
+    return result.join(' ');
+  }
+
   createTableRow(row, flag) {
     let tr = null;
     let td = null;
@@ -23,7 +40,7 @@ export default class Grid {
         tr = document.createElement('tr');
         Object.keys(row).forEach((col) => {
           td = document.createElement('td');
-          tcontent = document.createTextNode(col);
+          tcontent = document.createTextNode(this.titleCase(col));
           td.appendChild(tcontent);
           tr.appendChild(td);
         });
@@ -63,10 +80,10 @@ export default class Grid {
       document.querySelector('thead').insertAdjacentElement('afterend', tbody);
 
       //writing out the table title
-      document.querySelector(
-        'thead'
-      ).innerHTML = `<tr><th colspan="${Object.keys(resContent[0]).length}">~ ${this.fileName} ~</th></tr>`;
-      
+      document.querySelector('thead').innerHTML = `<tr><th colspan="${
+        Object.keys(resContent[0]).length
+      }">~ ${this.fileName} ~</th></tr>`;
+
       //writing out the table subtitle
       this.createTableRow(resContent[0], 'key');
 
