@@ -44,7 +44,7 @@ export default class Grid {
           td.appendChild(tcontent);
           tr.appendChild(td);
         });
-        document.querySelector('tbody').insertAdjacentElement('beforeend', tr);
+        document.querySelector(`.${this.fileName}-grid tbody`).insertAdjacentElement('beforeend', tr);
         break;
 
       case 'value':
@@ -56,7 +56,7 @@ export default class Grid {
           td.appendChild(tcontent);
           tr.appendChild(td);
         });
-        document.querySelector('tbody').insertAdjacentElement('beforeend', tr);
+        document.querySelector(`.${this.fileName}-grid tbody`).insertAdjacentElement('beforeend', tr);
         break;
       default:
         console.error(
@@ -69,18 +69,19 @@ export default class Grid {
   draw() {
     read(this.url).then((resContent) => {
       const table = document.createElement('table');
+      table.classList.add(`${this.fileName}-grid`);
       const thead = document.createElement('thead');
       const tbody = document.createElement('tbody');
-
+   
       //creating an empty table
-      document.querySelector('main').insertAdjacentElement('afterend', table);
+      document.querySelector('main').insertAdjacentElement('beforeend', table);
       document
-        .querySelector('table')
+        .querySelector(`.${this.fileName}-grid`)
         .insertAdjacentElement('afterbegin', thead);
-      document.querySelector('thead').insertAdjacentElement('afterend', tbody);
+      document.querySelector(`.${this.fileName}-grid thead`).insertAdjacentElement('afterend', tbody);
 
       //writing out the table title
-      document.querySelector('thead').innerHTML = `<tr><th colspan="${
+      document.querySelector(`.${this.fileName}-grid thead`).innerHTML = `<tr><th colspan="${
         Object.keys(resContent[0]).length
       }">~ ${this.fileName} ~</th></tr>`;
 
