@@ -1,8 +1,9 @@
 import { print } from './JSONhandler.js';
 import Grid from './JSONwriter-grid.js';
 
-print('/data/colors.json');
-print('/data/users.json');
+// print('/data/colors.json');
+// print('/data/users.json');
 
-let grid = new Grid('/data/colors.json');
-grid.draw();
+//drawing a suitable grid view for a given JSON
+new Grid('/data/colors.json').draw();
+new Grid('/data/users.json').draw();
