@@ -65,8 +65,8 @@ export default class Grid {
       //writing out the table title
       document.querySelector(
         'thead'
-      ).innerHTML = `<tr><th colspan="3">~ ${this.fileName} ~</th></tr>`;
-
+      ).innerHTML = `<tr><th colspan="${Object.keys(resContent[0]).length}">~ ${this.fileName} ~</th></tr>`;
+      
       //writing out the table subtitle
       this.createTableRow(resContent[0], 'key');
 
