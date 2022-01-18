@@ -7,3 +7,4 @@ import Grid from './JSONwriter-grid.js';
 //drawing a suitable grid view for a given JSON
 new Grid('/data/colors.json').draw();
 new Grid('/data/users.json').draw();
+new Grid('/data/peoples.json').draw();
