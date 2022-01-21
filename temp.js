@@ -9,7 +9,7 @@ function selector(str) {
       throw new Error("Please check the element you've passed in!");
     }
 
-    items = str.split(/[\[\]]/g).filter(Boolean); //triming the array after splitting it
+    items = str.split(/[\[\]]/g).filter(Boolean); //trimming the array after splitting it
     console.log(items);
 
     switch (str.indexOf('[')) {
