@@ -44,7 +44,7 @@ function selector(str) {
 
     console.log(hasElement, hasAttribute, element, attribute);
   } catch (err) {
-    err.name = 'Invalide Selector Error';
+    err.name = 'Invalid Selector Error';
     console.error(err.stack);
   }
 }
