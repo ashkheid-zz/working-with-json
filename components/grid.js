@@ -1,8 +1,8 @@
 export default class Grid {
   #defaultConfig = {
-    widht: 640,
-    height: 480,
-    rednerTo: "section[grid]", //HtmlElement{object}, Selector{string}
+    // width: 640,
+    // height: 480,
+    renderTo: "section[grid]", //HtmlElement{object}, Selector{string}
     columns: [
       {
         fieldName: "id",
