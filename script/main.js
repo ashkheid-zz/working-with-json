@@ -1,5 +1,15 @@
 import Grid from '../components/grid.js';
+import users from '../data/users.js';
 
-let testGrid = new Grid();
+const data = users.getUsers();
+// console.log(data);
 
-console.log(testGrid.getConfig);
+const config = {
+  position: 'center',
+  width: '300px',
+  height: '200px',
+  theme: 'teal',
+  renderTo: 'section',
+};
+
+const userGrid = new Grid(data);
