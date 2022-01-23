@@ -1,32 +1,44 @@
 export default class Grid {
   #defaultConfig = {
-    // width: 640,
-    // height: 480,
-    renderTo: "section[grid]", //HtmlElement{object}, Selector{string}
-    columns: [
-      {
-        fieldName: "id",
-        title: "شناسه",
-        width: 150
-      },
-      {
-        fieldName: "name",
-        title: "نام",
-        width: "100%"
-      }
-    ]
-  }
-  #config;
+    position: 'center',
+    width: '100%',
+    height: 'auto',
+    theme: 'gray',
+    renderTo: 'section',
+  };
+  #config
+  #dataSource;
 
-  constructor(dataSource, config) {
-    this.#config = config;
+  constructor(data, config) {
+    this.gridData = data;
+    this.gridConfig = config;
   }
 
-  get getConfig() {
+  get gridConfig() {
     return this.#config || this.#defaultConfig;
   }
 
-  set setConfig(config) {
-    this.#config = config;
+  set gridConfig(value) {
+    this.#config = value || this.#defaultConfig;
+  }
+
+  get gridData() {
+    return this.#dataSource;
+  }
+
+  set gridData(value) {
+    this.#dataSource = value;
+  }
+
+  draw() {
+    //creating a container for grid
+
+    //render grid an empty template
+
+    //setting title of the grid
+
+    //setting subtitle of the grid
+    
+    //setting content of the grid
   }
 }
